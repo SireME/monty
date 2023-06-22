@@ -61,4 +61,10 @@ void swap(int linenum);
 /*add file*/
 void add(int linenum);
 
+/* more_stack_operations.c file*/
+void sub(int linenum);
+void dive(int linenum);
+void mul(int linenum);
+void mod(int linenum);
+
 #endif
