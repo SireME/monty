@@ -26,6 +26,7 @@ int main(int argc, char **argv)
 	}
 	readandtok(file_stream);
 	fclose(file_stream);
+	free_stack(stack);
 
 	return (0);
 }

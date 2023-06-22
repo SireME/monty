@@ -1,6 +1,6 @@
 #include "monty.h"
 
-void checkopcode(char *opcode, int linenum)
+void checkopcode(char *opcode, int linenum, FILE *stream, char *line)
 {
 	int i, code_exist = 0;
 	char *opcodes[8] = {"push", "pall", "pint", "pop", "swap", "add", "nop"};
@@ -17,12 +17,15 @@ void checkopcode(char *opcode, int linenum)
 	if (code_exist == 0)
 	{
 		fprintf(stderr, "L%d: unknown instruction %s\n", linenum, opcode);
+		free(line);
+		free_stack(stack);
+		fclose(stream);
 		exit(EXIT_FAILURE);
 	}
 
 }
 
-void isit_number(char *num, int linenum)
+void isit_number(char *num, int linenum, FILE *stream, char *line)
 {
 	int i;
 
@@ -31,6 +34,9 @@ void isit_number(char *num, int linenum)
 		if (isdigit(num[i]) == 0)
 		{
 			fprintf(stderr, "L%d: usage: push integer\n", linenum);
+			free(line);
+			free_stack(stack);
+			fclose(stream);
 			exit(EXIT_FAILURE);
 		}
 	}
@@ -50,10 +56,10 @@ void readandtok(FILE *stream)
 		if (strcmp(opcode, "push") ==0)
 		{
 			arg = strtok(NULL, " ");
-			isit_number(arg, linenum);
+			isit_number(arg, linenum, stream, line);
 			argi = atoi(arg);
 		}
-		checkopcode(opcode, linenum);
+		checkopcode(opcode, linenum, stream, line);
 		checknrun(opcode, argi);
 
 		linenum += 1;

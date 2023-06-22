@@ -1,6 +1,6 @@
 push 1
 pall
 push 2
-nop
+noup
 push 3
 pall

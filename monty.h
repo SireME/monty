@@ -44,4 +44,7 @@ size_t pall(stack_t *h);
 void readandtok(FILE *stream);
 void checknrun(char *opcode, int arg);
 
+/*free stack memory*/
+void free_stack(stack_t *head);
+
 #endif
