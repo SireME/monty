@@ -80,12 +80,12 @@ void readandtok(FILE *stream)
 	while (getline(&line, &len, stream) != -1)
 	{
 		line[strlen(line) - 1] = '\0';
-		opcode = strtok(line, " ");
+		opcode = strtok(line, " \t");
 		if (opcode == NULL)
 			opcode = ""; /* instance of an empty line*/
 		if (strcmp(opcode, "push") == 0)
 		{
-			arg = strtok(NULL, " ");
+			arg = strtok(NULL, " \t");
 			isit_number(arg, linenum, stream, line);
 			argi = atoi(arg);
 		}
