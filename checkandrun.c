@@ -19,4 +19,6 @@ void checknrun(char *opcode, int arg, int linenum)
 		pint(linenum);
 	else if (strcmp(opcode, "pop") == 0)
 		pop(linenum);
+	else if (strcmp(opcode, "swap") == 0)
+		swap(linenum);
 }

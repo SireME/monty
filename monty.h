@@ -52,4 +52,7 @@ void pint(int linenum);
 
 /*pop file*/
 void pop(int linenum);
+
+/*stack file*/
+void swap(int linenum);
 #endif
