@@ -50,6 +50,8 @@ void isit_number(char *num, int linenum, FILE *stream, char *line)
 
 	for (i = 0; num[i]; i++)
 	{
+		if (num[0] == '-')/*support negative numbers*/
+			continue;
 		if (isdigit(num[i]) == 0)
 		{
 			fprintf(stderr, "L%d: usage: push integer\n", linenum);
