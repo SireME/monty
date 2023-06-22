@@ -38,7 +38,9 @@ typedef struct instruction_s
 } instruction_t;
 
 extern stack_t *stack;
-/*0. push, pall*/
+/*0. push, pall and initial*/
+void checkopcode(char *opcode, int linenum, FILE *stream, char *line);
+void isit_number(char *num, int linenum, FILE *stream, char *line);
 stack_t *push(stack_t **head, const int n);
 size_t pall(stack_t *h);
 void readandtok(FILE *stream);
