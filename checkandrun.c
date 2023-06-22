@@ -31,5 +31,6 @@ void checknrun(char *opcode, int arg, int linenum)
 		mul(linenum);
 	else if (strcmp(opcode, "mod") == 0)
 		mod(linenum);
-
+	else if (strcmp(opcode, "pchar") == 0)
+		pchar(linenum);
 }

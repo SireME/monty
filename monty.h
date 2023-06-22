@@ -67,4 +67,6 @@ void dive(int linenum);
 void mul(int linenum);
 void mod(int linenum);
 
+/*pchar.c file*/
+void pchar(int linenum);
 #endif
