@@ -7,11 +7,14 @@
  *
  * Return: status of program
  */
-stack_t *stack = NULL;
+
+stack_t *stack;
+
 int main(int argc, char **argv)
 {
 	FILE *file_stream;
 
+	stack = NULL;
 	(void)argv;
 	if (argc != 2)
 	{

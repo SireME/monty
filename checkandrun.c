@@ -10,7 +10,7 @@
 
 void checknrun(char *opcode, int arg)
 {
-	if(strcmp(opcode, "push") == 0)
+	if (strcmp(opcode, "push") == 0)
 		push(&stack, arg);
 	else if (strcmp(opcode, "pall") == 0)
 		pall(stack);

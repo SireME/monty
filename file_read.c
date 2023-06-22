@@ -1,5 +1,14 @@
 #include "monty.h"
 
+/**
+ * checkopcode - determine if a particular code is valid
+ * @opcode: opcode to check
+ * @linenum: line number of code in file
+ * @stream: file stream
+ * @line: buffer having line content
+ *
+ * Return: nothing
+ */
 void checkopcode(char *opcode, int linenum, FILE *stream, char *line)
 {
 	int i, code_exist = 0;
@@ -8,7 +17,7 @@ void checkopcode(char *opcode, int linenum, FILE *stream, char *line)
 	opcodes[7] = NULL;
 	for (i = 0; opcodes[i]; i++)
 	{
-		if(strcmp(opcodes[i], opcode) == 0)
+		if (strcmp(opcodes[i], opcode) == 0)
 		{
 			code_exist += 1;
 			break;
@@ -24,6 +33,16 @@ void checkopcode(char *opcode, int linenum, FILE *stream, char *line)
 	}
 
 }
+
+/**
+ * isit_number - determine if string is a number or not
+ * @num: possible number string
+ * @linenum: current line number
+ * @stream: file stream
+ * @line: current line buffer
+ *
+ * Return: nothing
+ */
 
 void isit_number(char *num, int linenum, FILE *stream, char *line)
 {
@@ -41,6 +60,13 @@ void isit_number(char *num, int linenum, FILE *stream, char *line)
 		}
 	}
 }
+
+/**
+ * readandtok - read a file, perform checks and run opcode
+ * @stream: file stream
+ *
+ * Return: nothing
+ */
 void readandtok(FILE *stream)
 {
 	char *line = NULL, *opcode, *arg;
@@ -53,7 +79,7 @@ void readandtok(FILE *stream)
 		opcode = strtok(line, " ");
 		if (opcode == NULL)
 			opcode = ""; /* instance of an empty line*/
-		if (strcmp(opcode, "push") ==0)
+		if (strcmp(opcode, "push") == 0)
 		{
 			arg = strtok(NULL, " ");
 			isit_number(arg, linenum, stream, line);
