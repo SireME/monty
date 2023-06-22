@@ -21,4 +21,6 @@ void checknrun(char *opcode, int arg, int linenum)
 		pop(linenum);
 	else if (strcmp(opcode, "swap") == 0)
 		swap(linenum);
+	else if (strcmp(opcode, "add") == 0)
+		add(linenum);
 }

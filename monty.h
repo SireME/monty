@@ -55,4 +55,8 @@ void pop(int linenum);
 
 /*stack file*/
 void swap(int linenum);
+
+/*add file*/
+void add(int linenum);
+
 #endif
