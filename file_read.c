@@ -16,7 +16,7 @@ void checkopcode(char *opcode, int linenum, FILE *stream, char *line)
 
 	opcodes[7] = "sub", opcodes[8] = "div";
 	opcodes[9] = "mul", opcodes[10] = "mod";
-	opcodes[11] = "#", opcodes[12] = NULL;
+	opcodes[11] = NULL;
 	for (i = 0; opcodes[i]; i++)
 	{
 		if (strcmp(opcodes[i], opcode) == 0)
@@ -81,6 +81,11 @@ void readandtok(FILE *stream)
 	{
 		line[strlen(line) - 1] = '\0';
 		opcode = strtok(line, " \t");
+		if (strcmp(opcode, "#") == 0)
+		{
+			linenum += 1;
+			continue;
+		}
 		if (opcode == NULL)
 			opcode = ""; /* instance of an empty line*/
 		if (strcmp(opcode, "push") == 0)
