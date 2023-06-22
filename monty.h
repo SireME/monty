@@ -48,6 +48,7 @@ void checknrun(char *opcode, int arg, int linenum);
 void free_stack(stack_t *head);
 
 /*pint file*/
-void pint();
+void pint(int linenum);
+void nop(int linenun);
 
 #endif
