@@ -50,4 +50,6 @@ void free_stack(stack_t *head);
 /*pint file*/
 void pint(int linenum);
 
+/*pop file*/
+void pop(int linenum);
 #endif

@@ -4,6 +4,7 @@
  * checknrun - check opcode and run accordingly
  * @opcode: opcode to check
  * @arg: opcode argument if any
+ * @linenum: line number
  *
  * Return: nothing
  */
@@ -16,4 +17,6 @@ void checknrun(char *opcode, int arg, int linenum)
 		pall(stack);
 	else if (strcmp(opcode, "pint") == 0)
 		pint(linenum);
+	else if (strcmp(opcode, "pop") == 0)
+		pop(linenum);
 }
