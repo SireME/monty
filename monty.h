@@ -1,10 +1,12 @@
 #ifndef __MONTY_H__
 #define __MONTY_H__
 
+#define _GNU_SOURCE
 #include <stdlib.h>
 #include <stdio.h>
 #include <unistd.h>
 #include <string.h>
+#include <ctype.h>
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
@@ -35,8 +37,11 @@ typedef struct instruction_s
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
+extern stack_t *stack;
 /*0. push, pall*/
 stack_t *push(stack_t **head, const int n);
 size_t pall(stack_t *h);
+void readandtok(FILE *stream);
+void checknrun(char *opcode, int arg);
 
 #endif
