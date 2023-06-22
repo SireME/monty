@@ -16,6 +16,4 @@ void checknrun(char *opcode, int arg, int linenum)
 		pall(stack);
 	else if (strcmp(opcode, "pint") == 0)
 		pint(linenum);
-	else if (strcmp(opcode, "nop") == 0)
-		nop(linenun)
 }

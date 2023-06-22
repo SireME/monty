@@ -49,6 +49,5 @@ void free_stack(stack_t *head);
 
 /*pint file*/
 void pint(int linenum);
-void nop(int linenun);
 
 #endif
