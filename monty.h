@@ -42,9 +42,12 @@ extern stack_t *stack;
 stack_t *push(stack_t **head, const int n);
 size_t pall(stack_t *h);
 void readandtok(FILE *stream);
-void checknrun(char *opcode, int arg);
+void checknrun(char *opcode, int arg, int linenum);
 
 /*free stack memory*/
 void free_stack(stack_t *head);
+
+/*pint file*/
+void pint();
 
 #endif

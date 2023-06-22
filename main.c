@@ -15,7 +15,6 @@ int main(int argc, char **argv)
 	FILE *file_stream;
 
 	stack = NULL;
-	(void)argv;
 	if (argc != 2)
 	{
 		write(2, "USAGE: monty file\n", 18);

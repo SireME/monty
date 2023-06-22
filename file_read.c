@@ -86,7 +86,7 @@ void readandtok(FILE *stream)
 			argi = atoi(arg);
 		}
 		checkopcode(opcode, linenum, stream, line);
-		checknrun(opcode, argi);
+		checknrun(opcode, argi, linenum);
 
 		linenum += 1;
 	}
