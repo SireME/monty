@@ -16,7 +16,7 @@ void checkopcode(char *opcode, int linenum, FILE *stream, char *line)
 
 	opcodes[7] = "sub", opcodes[8] = "div";
 	opcodes[9] = "mul", opcodes[10] = "mod";
-	opcodes[11] = NULL;
+	opcodes[11] = "#", opcodes[12] = NULL;
 	for (i = 0; opcodes[i]; i++)
 	{
 		if (strcmp(opcodes[i], opcode) == 0)
