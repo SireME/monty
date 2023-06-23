@@ -72,4 +72,7 @@ void pchar(int linenum);
 
 /*pstr file*/
 void pstr(void);
+
+/*rotl file*/
+void rotl(void);
 #endif
