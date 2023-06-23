@@ -12,11 +12,11 @@
 void checkopcode(char *opcode, int linenum, FILE *stream, char *line)
 {
 	int i, code_exist = 0;
-	char *opcodes[13] = {"push", "pall", "pint", "pop", "swap", "add", "nop"};
+	char *opcodes[14] = {"push", "pall", "pint", "pop", "swap", "add", "nop"};
 
 	opcodes[7] = "sub", opcodes[8] = "div";
 	opcodes[9] = "mul", opcodes[10] = "mod";
-	opcodes[11] = "pchar", opcodes[12] = NULL;
+	opcodes[11] = "pchar", opcodes[12] = "pstr", opcodes[13] = NULL;
 	for (i = 0; opcodes[i]; i++)
 	{
 		if (strcmp(opcodes[i], opcode) == 0)

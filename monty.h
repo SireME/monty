@@ -69,4 +69,7 @@ void mod(int linenum);
 
 /*pchar.c file*/
 void pchar(int linenum);
+
+/*pstr file*/
+void pstr(void);
 #endif
