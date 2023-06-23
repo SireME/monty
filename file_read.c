@@ -81,13 +81,13 @@ void readandtok(FILE *stream)
 	{
 		line[strlen(line) - 1] = '\0';
 		opcode = strtok(line, " \t");
+		if (opcode == NULL)
+			opcode = ""; /* instance of an empty line*/
 		if (strcmp(opcode, "#") == 0)
 		{
 			linenum += 1;
 			continue;
 		}
-		if (opcode == NULL)
-			opcode = ""; /* instance of an empty line*/
 		if (strcmp(opcode, "push") == 0)
 		{
 			arg = strtok(NULL, " \t");
