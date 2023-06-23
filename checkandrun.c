@@ -35,6 +35,6 @@ void checknrun(char *opcode, int arg, int linenum)
 		pchar(linenum);
 	else if (strcmp(opcode, "pstr") == 0)
 		pstr();
-	else if (strcmp(opcode, "rotl") ==0)
+	else if (strcmp(opcode, "rotl") == 0)
 		rotl();
 }
