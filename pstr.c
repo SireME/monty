@@ -7,14 +7,17 @@
  */
 void pstr(void)
 {
-	while (stack != NULL)
+	stack_t *temp;
+
+	temp = stack;
+	while (temp != NULL)
 	{
-		if (stack->n == 0)
+		if (temp->n == 0)
 			break;
-		if (stack->n < 0 || stack->n > 127)
+		if (temp->n < 0 || temp->n > 127)
 			break;
-		printf("%c", stack->n);
-		stack = stack->next;
+		printf("%c", temp->n);
+		temp = temp->next;
 	}
 	putchar('\n');
 
